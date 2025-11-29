@@ -126,20 +126,21 @@
   </section>
 
   <!-- Section 3: Works -->
-  <section id="works" class="section works-section">
-    <div class="container">
-      <h2 class="section-title">WORKS <span class="ja">施工事例</span></h2>
+<section id="works" class="section works-section">
+  <div class="container">
+    <h2 class="section-title">WORKS <span class="ja">施工事例</span></h2>
 
-      <div class="works-slider-container">
-        <!-- ←ここに自動挿入 -->
-        <div id="works-feed" class="works-track loading"></div>
-      </div>
-
-      <div class="center-btn">
-        <a href="blog.html?works=1" class="btn btn-secondary">施工事例一覧を見る</a>
-      </div>
+    <!-- ↓ 初期表示とエラー領域（JSが自動で使います） -->
+    <div id="works-error" class="works-error" hidden>
+      <p>読み込みエラー：<span id="works-error-text"></span></p>
     </div>
-  </section>
+    <div id="works-list">読み込み中…</div>
+
+    <div class="center-btn" style="margin-top:24px">
+      <a href="blog.html" class="btn btn-secondary">施工事例一覧を見る</a>
+    </div>
+  </div>
+</section>
 
   <!-- Section 4: Reasons -->
   <section class="section reasons-section">
@@ -215,7 +216,7 @@
   </footer>
 
   <!-- 自動取得スクリプト（必須） -->
-  <script src="js/works.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/works.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

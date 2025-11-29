@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ブログ一覧</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+            margin: 24px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            background: #fff
+        }
+
+        .date {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 6px
+        }
+
+        .title {
+            font-weight: 700;
+            margin: 0 0 8px
+        }
+
+        .more {
+            display: inline-block;
+            margin-top: 8px;
+            color: #0a58ca;
+            text-decoration: none
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ブログ</h1>
+    <div id="blog-list" class="grid" aria-live="polite">読み込み中…</div>
+    <div id="pager"></div>
+
+    <!-- 次のステップで作るJS -->
+    <script src="js/blog.js"></script>
+<script>
+  // すでにあるスクリプトの一番下でOK
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.card[data-id]');
+    if (!card) return;
+    const id = card.dataset.id;
+    window.location.href = `blog-detail.html?id=${encodeURIComponent(id)}`;
+  });
+</script>
+</body>
+
+</html>
